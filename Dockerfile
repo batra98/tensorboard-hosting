@@ -1,10 +1,11 @@
+# Use Python 3.8 image as base
 FROM python:3.10-slim
 
 # Set working directory
 WORKDIR /app
 
-# Install TensorFlow and TensorBoard
-RUN pip install tensorflow tensorboard
+# Install necessary dependencies
+RUN pip install torch torchvision tensorboard torch-tb-profiler
 
 # Copy your logs directory into the container
 COPY logs /logs
