@@ -4,8 +4,8 @@ FROM python:3.10-slim
 # Set working directory
 WORKDIR /app
 
-# Install necessary dependencies
-RUN pip install torch torchvision tensorboard torch-tb-profiler
+# Install only necessary dependencies for TensorBoard visualization
+RUN pip install tensorboard torch-tb-profiler
 
 # Copy your logs directory into the container
 COPY logs /logs
